@@ -1,3 +1,4 @@
 for i in range(99):
-    print(f"{i}={i//16}x{i%16:02x}")
+    for j in range(i,99):
+        print(f"{i:02d}", end=", " if i!=9 or j !=9 else "\n")
     
