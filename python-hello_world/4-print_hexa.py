@@ -1,3 +1,3 @@
 for i in range(99):
-    print(f"{i}={i:02x}",end=', ' if i< 98 else '\n')
+    print(f"{i}={i//16}x{i%16:02x}")
     
