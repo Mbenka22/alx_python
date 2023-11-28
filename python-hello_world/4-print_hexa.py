@@ -1,3 +1,3 @@
 for i in range(99):
-    print(f"{i} {i:x}".format(i))
+    print(f"{i} ={i:02x}".format(i))
     
