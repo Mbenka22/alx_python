@@ -7,3 +7,4 @@ print("Middle word: {}".format(word[1:-1]))
 
 
 
+
