@@ -1,3 +1,4 @@
-numbers=[2,1]
-total_sum=sum(numbers)
-print(total_sum)
+def add(a,b):
+    return a+b
+print(add(1, 2))
+
