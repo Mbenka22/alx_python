@@ -21,4 +21,4 @@ def fibonacci_sequence(n):
             a, b = b, c
         
         return fibonacci
-print(fibonacci_sequence(6))
+
