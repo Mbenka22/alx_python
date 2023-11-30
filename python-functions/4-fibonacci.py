@@ -1,4 +1,5 @@
 def fibonacci_sequence(n):
+    n=6;
     fibonacci = []
     
     if n <= 0:
