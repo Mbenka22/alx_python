@@ -17,7 +17,3 @@ def validate_password(password):
 
     # Password meets all conditions
     return True
-print(validate_password("Password123"))
-#print(validate_password("abc123"))
-#print(validate_password("Password 123"))
-#print(validate_password("password123"))
