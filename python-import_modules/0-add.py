@@ -6,5 +6,5 @@ def main():
     sum=add(a,b)
     print("{}+{}={}".format(a,b,sum))
 
-if __name__=="_main_":
+if __name__=="__main__":
     main()
