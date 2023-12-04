@@ -1,10 +1,11 @@
 from add_0 import add
 
 def main():
+    # Define variables a and b separately
     a=1
     b=2
-    sum=add(a,b)
-    print("{}+{}={}".format(a,b,sum))
+    result=add(a,b)
+    print("{}+{}={}".format(a,b,result))
 
 if __name__=="__main__":
     main()
