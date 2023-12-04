@@ -11,8 +11,8 @@ def safe_print_division(a, b):
         print("Inside result: {}".format(result))
 
 # Test cases
-result = safe_print_division(10, 2)
+result = safe_print_division(12, 2)
 print("Result:", result)
 
-result = safe_print_division(5, 0)
+result = safe_print_division(12, 2)
 print("Result:", result)
