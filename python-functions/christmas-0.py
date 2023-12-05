@@ -17,4 +17,20 @@ for _ in range(tree_height // 3):
     tuple1=(1,2,4,3)
     tuple2=(1,2,3,4)
     print(tuple1<tuple2)
-      
+
+#squared
+squared_numbers = [x ** 2 for x in range(5)]
+print(squared_numbers)
+
+a = [66.25, 333, 333, 1, 1234.5]
+print(a.count(333), a.count(66.25), a.count('x'),a.count('b'))    
+
+
+a.insert(2, -1)
+a.append(333)
+import random
+numlist=[]
+for i in range(5):
+    numlist.append(random.randrange(1,10))
+    for i in numlist:
+        print(i)
