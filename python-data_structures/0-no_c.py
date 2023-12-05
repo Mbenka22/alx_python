@@ -12,7 +12,3 @@ def no_c(my_string):
     
     # Convert the list of characters back to a string
     return ''.join(chars)
-
-# Test the function
-result = no_c("This is a test string with Cc characters")
-print(result)  # Output: "This is a test string with  characters"
