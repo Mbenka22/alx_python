@@ -5,3 +5,6 @@ def print_matrix_integer(matrix):
                 print("{:d}".format(num))
             else:
                 print("{:d}".format(num), end=' ')
+def print_matrix_integer(matrix):
+    for row in matrix:
+        print(*row)
