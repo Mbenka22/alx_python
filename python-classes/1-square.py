@@ -1,4 +1,4 @@
-'''the module will cover all the propoerties of the class Square inclusive of the attributes '''
+'''the module will cover all the properties of the class Square inclusive of the attributes '''
 class Square:
     
     '''the function is initialized and  defined as per the previous module ie 0-square'''
