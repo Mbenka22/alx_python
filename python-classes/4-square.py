@@ -42,3 +42,6 @@ if __name__ == "__main__":
     my_square.size = 0
     my_square.my_print()
     print("--")
+
+
+help(Square)    
