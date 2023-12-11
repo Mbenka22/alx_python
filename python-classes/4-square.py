@@ -1,9 +1,11 @@
-'''In this new module the class introduces my-print method which prints a sign if certain conditions are met'''
+'''This Square class includes a my_print() method that prints a square made of '#' characters based on the size attribute'''
 class Square:
+
+    
     def __init__(self, size=0):
         self.size = size
-
-    @property
+    '''the @property will hold the data for the size class'''
+    @property 
     def size(self):
         return self.__size
 
