@@ -1,22 +1,19 @@
-'''This module will explore the class square'''
 class Square:
     def __init__(self, size):
-        self.size = size
+        self.__size = size
 
-        '''this function will be used to define the square '''
+# Test cases
+if __name__ == "__main__":
+    my_square = Square(3)
+    print(type(my_square))  # Output: <class '__main__.Square'>
+    print(my_square.__dict__)  # Output: {'_Square__size': 3}
 
-    def set_size(self, new_size):
-        self.size = new_size
-        '''I will use the set function to set the parameters of the square'''
+    try:
+        print(my_square.size)  # Trying to access private attribute directly raises an AttributeError
+    except AttributeError as e:
+        print(e)  # Output: 'Square' object has no attribute 'size'
 
-    def get_area(self):
-        return self.size ** 2
-
-
-# Create an instance of the Square class
-square = Square()
-
-# Get the area of the square
-area = square.get_area()
-print("Area of the square:", area)  
-
+    try:
+        print(my_square.__size)  # Trying to access private attribute directly raises an AttributeError
+    except AttributeError as e:
+        print(e)  # Output: 'Square' object has no attribute '__size'
