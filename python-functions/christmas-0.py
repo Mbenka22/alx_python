@@ -34,3 +34,11 @@ for i in range(5):
     numlist.append(random.randrange(1,10))
     for i in numlist:
         print(i)
+
+
+        #oop
+class Person:
+    pass  # An empty block
+
+p = Person()
+print(p)       
