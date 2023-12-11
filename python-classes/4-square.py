@@ -1,4 +1,4 @@
-'''This Square class includes a my_print() method that prints a square made of '#' characters based on the size attribute'''
+'''the module will introduce new concepts ie getter and setter '''
 class Square:
 
     '''definition of the self inclusive of the size which as of the previous assignment is set to private'''
