@@ -10,7 +10,7 @@ class Square:
 
 # Example usage:
 my_square = Square(3)
-print("Size of the square:", my_square.get_size())  # Output: Size of the square: 5
+print("Size of the square:", my_square.get_size())  # Output: Size of the square: 
 
 my_square.set_size(3)
-print("Updated size of the square:", my_square.get_size())  # Output: Updated size of the square: 7
+print("Updated size of the square:", my_square.get_size())  # Output: Updated size of the square: 
