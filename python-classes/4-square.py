@@ -1,7 +1,7 @@
 '''This Square class includes a my_print() method that prints a square made of '#' characters based on the size attribute'''
 class Square:
 
-    
+    '''definition of the self inclusive of the size which as of the previous assignment is set to private'''
     def __init__(self, size=0):
         self.size = size
     '''the @property will hold the data for the size class'''
@@ -9,7 +9,8 @@ class Square:
     def size(self):
         return self.__size
 
-    @size.setter
+    '''the decorator setter will be used to set values for the self'''
+    @size.setter 
     def size(self, value):
         if not isinstance(value, int):
             raise TypeError("size must be an integer")
