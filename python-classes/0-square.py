@@ -1,38 +1,16 @@
 class Square:
-    def __init__(self, size=0):
-        self.__size = size if isinstance(size, int) and size >= 0 else 0
+    def __init__(self, size):
+        self.__size = size
 
-    def area(self):
-        return self.__size ** 2
+    def get_size(self):
+        return self.__size
 
-my_square_1 = Square()
-print(type(my_square_1))
-print(my_square_1.__dict__)
+    def set_size(self, size):
+        self.__size = size
 
-my_square_2 = Square()
-print(type(my_square_2))
-print(my_square_2.__dict__)
+# Example usage:
+my_square = Square(3)
+print("Size of the square:", my_square.get_size())  # Output: Size of the square: 5
 
-try:
-    print(my_square_1.size)
-except Exception as e:
-    print(e)
-
-try:
-    print(my_square_1.__size)
-except Exception as e:
-    print(e)
-
-try:
-    my_square_3 = Square()
-    print(type(my_square_3))
-    print(my_square_3.__dict__)
-except Exception as e:
-    print(e)
-
-try:
-    my_square_4 = Square()
-    print(type(my_square_4))
-    print(my_square_4.__dict__)
-except Exception as e:
-    print(e)
+my_square.set_size(3)
+print("Updated size of the square:", my_square.get_size())  # Output: Updated size of the square: 7
