@@ -5,7 +5,7 @@ class Square:
     def area(self):
         return self.__size ** 2
 
-my_square_1 = Square(3)
+my_square_1 = Square()
 print(type(my_square_1))
 print(my_square_1.__dict__)
 
@@ -24,14 +24,14 @@ except Exception as e:
     print(e)
 
 try:
-    my_square_3 = Square("3")
+    my_square_3 = Square()
     print(type(my_square_3))
     print(my_square_3.__dict__)
 except Exception as e:
     print(e)
 
 try:
-    my_square_4 = Square(-89)
+    my_square_4 = Square()
     print(type(my_square_4))
     print(my_square_4.__dict__)
 except Exception as e:
