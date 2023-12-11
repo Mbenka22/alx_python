@@ -1,5 +1,8 @@
 '''the module will cover all the propoerties of the class Square inclusive of the attributes '''
 class Square:
+    
+    '''the function is initialized and  defined as per the previous module ie 0-square'''
+    
     def __init__(self, size=0):
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
@@ -8,7 +11,7 @@ class Square:
         else:
             self.__size = size
 
-# Test cases
+
 if __name__ == "__main__":
     try:
         my_square_1 = Square(3)
