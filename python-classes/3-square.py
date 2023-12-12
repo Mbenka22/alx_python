@@ -9,7 +9,7 @@ class Square:
     def size(self):
         return self.__size
 
-    '''a new term setter has been introduced and will be used to set the values need to calculate the area os the clas Square'''
+    '''a new term setter has been introduced and will be used to set the values need to calculate the area os the class Square'''
     @size.setter
     def size(self, value):
         if not isinstance(value, int):
@@ -35,3 +35,4 @@ if __name__ == "__main__":
         print("Area: {} for size: {}".format(my_square.area(), my_square.size))
     except Exception as e:
         print(e)  # Output: size must be an integer
+print(Square.__dict__)        

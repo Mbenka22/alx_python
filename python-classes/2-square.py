@@ -1,7 +1,7 @@
 '''The  module Square class has a private attribute __size and an area() method'''
 class Square:
 
-    '''i will initialize the method here and also make it impossible to access it form outside . If accessed, there will be a TypeError'''
+    '''I will initialize the method here and also make it impossible to access it form outside . If accessed, there will be a TypeError'''
     def __init__(self, size=0):
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
@@ -37,3 +37,5 @@ if __name__ == "__main__":
         print("Area:", my_square_2.area())  # Output: Area: 25
     except Exception as e:
         print(e)
+        
+
