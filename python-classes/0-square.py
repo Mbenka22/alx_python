@@ -15,7 +15,6 @@ if __name__ == "__main__":
     try:
         print(my_square.size)  
 
-     
     except AttributeError as e: # Output: 'Square' object has no attribute 'size'
         print(e)  
     try:
