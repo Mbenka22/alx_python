@@ -25,14 +25,15 @@ class Square:
 
 if __name__ == "__main__":
     my_square = Square(89)
-    print("Area: {} for size: {}".format(my_square.area(), my_square.size))  # Output: Area: 7921 for size: 89
+    print("Area: {} for size: {}".format(my_square.area(), my_square.size))  
 
     my_square.size = 3
-    print("Area: {} for size: {}".format(my_square.area(), my_square.size))  # Output: Area: 9 for size: 3
-
+    print("Area: {} for size: {}".format(my_square.area(), my_square.size))  
     try:
-        my_square.size = "5 feet"  # This will raise a TypeError
+        my_square.size = "5 feet"  
         print("Area: {} for size: {}".format(my_square.area(), my_square.size))
     except Exception as e:
-        print(e)  # Output: size must be an integer
+        print(e)  
+
+
 print(Square.__dict__)        
