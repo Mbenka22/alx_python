@@ -1,4 +1,4 @@
-'''the module will cover all the properties of the class Square inclusive of the attributes '''
+'''the module will cover all the properties of the class Square inclusive of the attributes . And defines the Square class'''
 class Square:
     
     '''the function is initialized and  defined as per the previous module ie 0-square'''
@@ -9,7 +9,7 @@ class Square:
         elif size < 0:
             raise ValueError("size must be >= 0")
         else:
-            self.__size = size
+            self.__size = size 
 
 
 if __name__ == "__main__":
