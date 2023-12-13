@@ -2,10 +2,10 @@ class BaseGeometry:
     def area(self):
         raise Exception("area() is not implemented")
 
-# Instantiate the object
+''' Instantiate the object'''
 bg = BaseGeometry()
 
-# Try calling the area method and catch the raised exception
+'''Try calling the area method and catch the raised exception'''
 try:
     print(bg.area())
 except Exception as e:
