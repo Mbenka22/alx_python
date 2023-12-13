@@ -1,3 +1,4 @@
+
 def is_kind_of_class(obj, a_class):
     # Check if the object's class matches the specified class
     if type(obj) is a_class:
