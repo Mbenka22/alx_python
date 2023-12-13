@@ -1,8 +1,10 @@
 class BaseGeometry:
     pass
 
+# Instantiate the object
 bg = BaseGeometry()
-#print the  the object
+
+# Print the object
 print(bg)
 
 # Print the attributes of the object
