@@ -1,3 +1,4 @@
+'''This code defines a BaseGeometry class with a public instance method area. '''
 class BaseGeometry:
     
     def area(self):
