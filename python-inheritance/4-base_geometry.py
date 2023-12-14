@@ -3,7 +3,7 @@ class BaseGeometry:
         raise Exception("area() is not implemented")
 
 ''' Instantiate the object'''
-bg = BaseGeometry()
+#bg = BaseGeometry()
 
 '''Try calling the area method and catch the raised exception'''
 # try:
