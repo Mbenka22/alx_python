@@ -1,5 +1,5 @@
-def is_same_class(instance, class_type):
-    return isinstance(instance, class_type)
+def is_same_class(obj, a_class):
+    return type(obj) is a_class
 
 
 
