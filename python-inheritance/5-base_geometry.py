@@ -1,4 +1,6 @@
+'''the class of integer validator'''
 class BaseGeometry:
+    '''the function for the area with errors raised if certain conditions aren't met'''
     def area(self):
         raise Exception("area() is not implemented")
 
