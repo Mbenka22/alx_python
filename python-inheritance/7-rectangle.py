@@ -2,6 +2,7 @@
 BaseGeometry = __import__("5-base_geometry").BaseGeometry
 '''A class that has inherited from Basegeometry'''
 class Rectangle(BaseGeometry):
+    '''instantiating the child class functions and also the imported ones'''
     def __init__(self, width, height):
         self.__width = 0
         self.__height = 0
