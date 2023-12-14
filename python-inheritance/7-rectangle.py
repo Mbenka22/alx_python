@@ -13,10 +13,10 @@ class Rectangle(BaseGeometry):
 
         '''The function will find the area of the rectangle'''
     def area(self):
-         return self.__width * self.__height
+         return self.__width*self.__height
         
     def __str__(self):
-         return f"Rectangle with width={self.__width} and height={self.__height}"
+         return "[Rectangle] {:d}/{:d}".format(self.__width,self.__height)
     
 #test example 
 # r = Rectangle(3, 5)
