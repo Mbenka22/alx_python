@@ -1,11 +1,5 @@
 '''The class that has inheritance'''
-class BaseGeometry:
-    def integer_validator(self, name, value):
-        if not isinstance(value, int):
-            raise ValueError(f"{name} must be an integer")
-        if value <= 0:
-            raise ValueError(f"{name} must be greater than 0")
-
+BaseGeometry = __import__("5-base_geometry").BaseGeometry
 
 class Rectangle(BaseGeometry):
     def __init__(self, width, height):
