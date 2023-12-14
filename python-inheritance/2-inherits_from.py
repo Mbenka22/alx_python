@@ -8,7 +8,7 @@ def inherits_from(obj, a_class):
         if cls is a_class or issubclass(cls, a_class):
             return True
     
-    return True
+    return False
 
 
 # a = True
