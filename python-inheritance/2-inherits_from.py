@@ -6,7 +6,7 @@ def inherits_from(obj, a_class):
     ''' Check if any class in the object's method resolution order is a subclass of a_class'''
     for cls in obj_classes:
         if cls is a_class or issubclass(cls, a_class):
-            return False
+            return True
     
     return True
 
