@@ -1,64 +1,48 @@
-'''the start of my new module and class'''
-class Base:
-    def __init__(self, id=None):
-        self.id = id
-'''the rectangle class which has inherited from the class base'''           
+'''Importing the Base class from models/base.py'''
+from base import Base  
+
 class Rectangle(Base):
-    # __width = width
-    # __height = height
-    # __x = x
-    # __y = y
-    '''setting the id to private'''
-    def __init__(self ,width,height, x = 0 , y = 0 , id = None):
+    def __init__(self, width, height, x=0, y=0, id=None):
+        super().__init__(id)
         self.__width = width
         self.__height = height
         self.__x = x
         self.__y = y
-        self.id = id
-    '''setting the getter and setters for the variables'''  
-    #width
-    @property
-    def width(self):
+
+    ''' Getter and setter for width'''
+    def get_width(self):
         return self.__width
-    
-    @width.setter
-    def width(self,value):
-        self.__width = value  
 
-    '''setting the getter and setter for the variable - height'''
-    @property
-    def height(self):
+    def set_width(self, width):
+        self.__width = width
+
+    '''Getter and setter for height'''
+    def get_height(self):
         return self.__height
-    
-    @height.setter
-    def height(self , value):
-        self.__height = value
 
-    ''''setting the getter and setter for "x"'''    
-    @property
-    def x(self):
+    def set_height(self, height):
+        self.__height = height
+
+    ''' Getter and setter for x'''
+    def get_x(self):
         return self.__x
-    
-    @x.setter
-    def x(self, value):
-        self.__x == value
 
-    '''setting the getter for "y"'''  
-    @property
-    def y(self):
+    def set_x(self, x):
+        self.__x = x
+
+    ''' Getter and setter for y'''
+    def get_y(self):
         return self.__y
-    
-    @y.setter
-    def y (self , value):
-        self.__y == value
-          
 
-r1 = Rectangle(10, 2)
-print(r1.id)
+    def set_y(self, y):
+        self.__y = y
 
-r2 = Rectangle(2, 10)
-print(r2.id)
+#examples
+# r1 = Rectangle(10, 2)
+# print(r1.id)
 
-r3 = Rectangle(10, 2, 0, 0, 12)
-print(r3.id)      
+# r2 = Rectangle(2, 10)
+# print(r2.id)
 
+# r3 = Rectangle(10, 2, 0, 0, 12)
+# print(r3.id)                
