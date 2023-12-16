@@ -1,4 +1,4 @@
-'''Importing the Base class from models/base.py'''
+'''Importing the Base class from base.py'''
 from base import Base  
 
 class Rectangle(Base):
