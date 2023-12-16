@@ -1,23 +1,14 @@
 '''the start of my new module and class'''
 class Base:
-    '''the new nb-objects with a value of 0'''
-    __nb_objects = 0 
-    '''setting the id to public'''
     def __init__(self, id=None):
-        '''start of the conditions in the function'''
-        if id is not None:
-            self.id = id
-        else:
-            '''the base class with the increament setting'''
-            Base.__nb_objects += 1
-            self.id = Base.__nb_objects
+        self.id = id
 '''the rectangle class which has inherited from the class base'''           
 class Rectangle(Base):
     # __width = width
     # __height = height
     # __x = x
     # __y = y
-
+    '''setting the id to private'''
     def __init__(self ,width,height, x = 0 , y = 0 , id = None):
         self.__width = width
         self.__height = height
