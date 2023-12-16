@@ -1,13 +1,17 @@
+'''the start of my new module and class'''
 class Base:
+    '''the new nb-objects with a value of 0'''
     __nb_objects = 0 
-
+    '''setting the id to public'''
     def __init__(self, id=None):
+        '''start of the conditions in the function'''
         if id is not None:
             self.id = id
         else:
+            '''the base class with the increament setting'''
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
-
+'''the test code'''
 b1 = Base()
 print(b1.id)
 
