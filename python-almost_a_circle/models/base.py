@@ -12,6 +12,6 @@ class Base:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
 '''the test code'''
-b1 = Base()
-print(b1.id)
+# b1 = Base()
+# print(b1.id)
 
