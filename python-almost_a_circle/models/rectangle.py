@@ -11,6 +11,7 @@ class Base:
             '''the base class with the increament setting'''
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
+'''the rectangle class which has inherited from the class base'''           
 class Rectangle(Base):
     # __width = width
     # __height = height
