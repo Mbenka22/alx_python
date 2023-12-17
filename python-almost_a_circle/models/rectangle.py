@@ -1,4 +1,5 @@
 '''Importing the Base class from base.py'''
+import __init__
 from base import Base
 def __init__(self, id=None):
         '''start of the conditions in the function'''
