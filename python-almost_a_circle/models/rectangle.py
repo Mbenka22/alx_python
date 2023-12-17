@@ -1,5 +1,9 @@
 '''Importing the Base class from base.py'''
 from base import Base
+# def __init__(self, id=None):
+#         '''start of the conditions in the function'''
+#         if id is not None:
+#             self.id = id
 '''creating the child class which has inherited from the imported base class'''
 class Rectangle(Base):
     '''initializing the attributes of the rectangle class'''
@@ -39,13 +43,13 @@ class Rectangle(Base):
     def set_y(self, y):
         self.__y = y
 
-# if __name__ == "__main__":
+if __name__ == "__main__":
 
-#     r1 = Rectangle(10, 2)
-#     print(r1.id)
+    r1 = Rectangle(10, 2)
+    print(r1.id)
 
-#     r2 = Rectangle(2, 10)
-#     print(r2.id)
+    r2 = Rectangle(2, 10)
+    print(r2.id)
 
-#     r3 = Rectangle(10, 2, 0, 0, 12)
-#     print(r3.id)
+    r3 = Rectangle(10, 2, 0, 0, 12)
+    print(r3.id)
