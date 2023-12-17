@@ -3,6 +3,7 @@ from base import Base
 '''creating the child class which has inherited from the imported base class'''
 class Rectangle(Base):
     def __init__(self, width, height, x=0, y=0, id=None):
+        '''using the super function to access the properties of the  class base'''
         super().__init__(id)
         self.__width = width
         self.__height = height
@@ -38,8 +39,8 @@ class Rectangle(Base):
         self.__y = y
 
 #examples
-r1 = Rectangle(10, 2)
-print(r1.id)
+# r1 = Rectangle(10, 2)
+# print(r1.id)
 
 # r2 = Rectangle(2, 10)
 # print(r2.id)
