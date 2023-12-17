@@ -1,7 +1,8 @@
 '''Importing the Base class from base.py'''
-from base import Base  
+from base import Base
 '''creating the child class which has inherited from the imported base class'''
 class Rectangle(Base):
+    '''initializing the attributes of the rectangle class'''
     def __init__(self, width, height, x=0, y=0, id=None):
         '''using the super function to access the properties of the  class base'''
         super().__init__(id)
@@ -38,12 +39,17 @@ class Rectangle(Base):
     def set_y(self, y):
         self.__y = y
 
+
+if __name__ == "__main__":
+        
+
 #examples
-# r1 = Rectangle(10, 2)
-# print(r1.id)
+    # r1 = Rectangle(10, 2)
+    # print(r1.id)
 
-# r2 = Rectangle(2, 10)
-# print(r2.id)
+    # r2 = Rectangle(2, 10)
+    # print(r2.id)
 
-# r3 = Rectangle(10, 2, 0, 0, 12)
-# print(r3.id)                
+    # r3 = Rectangle(10, 2, 0, 0, 12)
+    # print(r3.id) 
+                
