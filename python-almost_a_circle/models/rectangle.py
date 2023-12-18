@@ -11,6 +11,7 @@ class Rectangle(Base):
         self.x = x
         self.y = y
     '''Creating the getters and setters for the various attributes'''
+# setter for width
     @property
     def width(self):
         return self.__width
@@ -22,6 +23,8 @@ class Rectangle(Base):
         elif value <= 0:
             raise ValueError("width must be > 0")
         self.__width = value
+
+# setter for height
     @property
     def height(self):
         return self.__height
@@ -33,7 +36,7 @@ class Rectangle(Base):
         elif value <= 0:
             raise ValueError("height must be > 0")
         self.__width = value
-
+# setter for x
     @property
     def x(self):
         return self.__x
@@ -46,6 +49,7 @@ class Rectangle(Base):
             raise ValueError("x must be >= 0")
         self.__x = value
 
+# setter for y
     @property
     def y(self):
         return self.__y
@@ -69,7 +73,7 @@ class Rectangle(Base):
 #     r3 = Rectangle(10, 2, 0, 0, 12)
 #     print(r3.id)
         
-#examples1
+# examples1
 # if __name__ == "__main__":
 
 #     try:
@@ -83,9 +87,9 @@ class Rectangle(Base):
 #     except Exception as e:
 #         print("[{}] {}".format(e.__class__.__name__, e))
 
-#     try:
-#         r = Rectangle(10, 2)
-#         r.x = {}
+    # try:
+        # r = Rectangle(10, 2)
+        # r.x = {}
 #     except Exception as e:
 #         print("[{}] {}".format(e.__class__.__name__, e))
 
