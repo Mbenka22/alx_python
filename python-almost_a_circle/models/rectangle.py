@@ -64,8 +64,13 @@ class Rectangle(Base):
             raise ValueError("y must be >= 0")
         self.__y = value
 
-    '''defining the area of the rectangle'''
     def area(self):
+        '''Calculate the area of the rectangle using the public method def area(self)
+
+        Returns:
+        - int: The area of the rectangle calculated as width * height. the functions from the decorators have been used'''
+    
+        
         return self.__width * self.__height
 #examples
 # if __name__ == "__main__":

@@ -13,7 +13,7 @@ class Rectangle(BaseGeometry):
     
    
 
-
+# examples
 # r = Rectangle(3, 5)
 
 # print(r)
