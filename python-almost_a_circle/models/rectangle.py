@@ -1,59 +1,41 @@
-'''Importing the Base class from base.py'''
 from models.base import Base
-def __init__(self, id=None):
-        '''start of the conditions in the function'''
-        if id is not None:
-            self.id = id
-'''creating the child class which has inherited from the imported base class'''
-class Rectangle(Base):
-    '''initializing the attributes of the rectangle class'''
-    def __init__(self, width, height, x=0, y=0, id=None):
-        '''using the super function to access the properties of the  class base'''
-        super().__init__(id)
-        self.__width = width
-        self.__height = height
-        self.__x = x
-        self.__y = y
 
-    ''' Getter and setter for width'''
+class Rectangle(Base):
+    def __init__(self, width, height, x=0, y=0, id=None):
+        super().__init__(id)
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
+
     @property
-    def get_width(self):
+    def width(self):
         return self.__width
 
-    def set_width(self, width):
-        self.__width = width
+    @width.setter
+    def width(self, value):
+        self.__width = value
 
-    '''Getter and setter for height'''
     @property
-    def get_height(self):
+    def height(self):
         return self.__height
 
-    def set_height(self, height):
-        self.__height = height
+    @height.setter
+    def height(self, value):
+        self.__height = value
 
-    ''' Getter and setter for x'''
     @property
-    def get_x(self):
+    def x(self):
         return self.__x
 
-    def set_x(self, x):
-        self.__x = x
+    @x.setter
+    def x(self, value):
+        self.__x = value
 
-    ''' Getter and setter for y'''
     @property
-    def get_y(self):
+    def y(self):
         return self.__y
 
-    def set_y(self, y):
-        self.__y = y
-
-# if __name__ == "__main__":
-
-#     r1 = Rectangle(10, 2)
-#     print(r1.id)
-
-#     r2 = Rectangle(2, 10)
-#     print(r2.id)
-
-#     r3 = Rectangle(10, 2, 0, 0, 12)
-#     print(r3.id)
+    @y.setter
+    def y(self, value):
+        self.__y = value
