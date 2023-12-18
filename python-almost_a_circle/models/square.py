@@ -19,6 +19,32 @@ class Square(Rectangle):
         - str: A string representing the Square object in the format [Square] (<id>) <x>/<y> - <size> - in our case, width or height
         """
         return f"[Square] ({self.id}) {self.x}/{self.y} - {self.width}"
+    @property
+    def size(self):
+        return self.__width
+    
+    @size.setter
+    def size(self, value):
+        if not isinstance(value, int):
+            raise TypeError("width must be an integer")
+        elif value <= 0:
+            raise ValueError("width must be > 0")
+        self.__size = value
+
+    @property
+    def size(self):
+        return self.__height  
+    
+    @size.setter
+    def size(self, value):
+        if not isinstance(value, int):
+            raise TypeError("height must be an integer")
+        elif value <= 0:
+            raise ValueError("height must be > 0")
+        self.__size = value
+
+
+    
     
     
     
