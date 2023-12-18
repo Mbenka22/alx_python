@@ -1,5 +1,5 @@
 '''Importing the Base class from base.py'''
-from models.base import Base
+from base import Base
 def __init__(self, id=None):
         '''start of the conditions in the function'''
         if id is not None:
