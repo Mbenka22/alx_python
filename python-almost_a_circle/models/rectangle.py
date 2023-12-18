@@ -81,6 +81,17 @@ class Rectangle(Base):
         for _ in range(self.__height):
             print('#' * self.__width)
 
+
+
+    def __str__(self):
+        '''
+        Returns a string representation of the Rectangle instance.
+
+        Returns:
+        - str: A string representing the Rectangle object in the format [Rectangle] (<id>) <x>/<y> - <width>/<height>
+        '''
+        return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
+
 # examples4
 # if __name__ == "__main__":
 
@@ -140,3 +151,11 @@ class Rectangle(Base):
 #     r3 = Rectangle(8, 7, 0, 0, 12)
 #     print(r3.area())
 
+# examples5
+# if __name__ == "__main__":
+
+#     r1 = Rectangle(4, 6, 2, 1, 12)
+#     print(r1)
+
+#     r2 = Rectangle(5, 5, 1)
+#     print(r2)
