@@ -72,6 +72,25 @@ class Rectangle(Base):
     
         
         return self.__width * self.__height
+    
+
+    def display(self):
+        """
+        Prints the representation of the Rectangle instance with '#' characters to stdout.
+        """
+        for _ in range(self.__height):
+            print('#' * self.__width)
+
+# examples4
+# if __name__ == "__main__":
+
+    # r1 = Rectangle(4, 6)
+    # r1.display()
+
+    # print("---")
+
+    # r1 = Rectangle(2, 2)
+    # r1.display()
 #examples
 # if __name__ == "__main__":
 
