@@ -1,5 +1,5 @@
 '''Importing the fuction of base from the module models and has an empty __init__ file'''
-from base import Base
+from models.base import Base
 ''''creating the class Rectangle which has inherited from Base which has been stored in models.base'''
 class Rectangle(Base):
     '''Using the init function to create various private attributes'''
@@ -113,6 +113,19 @@ class Rectangle(Base):
         if len(args) >= 5:
             self.y = args[4]
 
+        else:
+            for key, value in kwargs.items():
+                if key == 'id':
+                    self.id = value
+                elif key == 'width':
+                    self.width = value
+                elif key == 'height':
+                    self.height = value
+                elif key == 'x':
+                    self.x = value
+                elif key == 'y':
+                    self.y = value
+
 # examples4
 # if __name__ == "__main__":
 
@@ -211,4 +224,22 @@ class Rectangle(Base):
 #     print(r1)
 
 #     r1.update(89, 2, 3, 4, 5)
+#     print(r1)
+                    
+#examples8
+# if __name__ == "__main__":
+
+#     r1 = Rectangle(10, 10, 10, 10)
+#     print(r1)
+
+#     r1.update(height=1)
+#     print(r1)
+
+#     r1.update(width=1, x=2)
+#     print(r1)
+
+#     r1.update(y=1, width=2, x=3, id=89)
+#     print(r1)
+
+#     r1.update(x=1, height=2, y=3, width=4)
 #     print(r1)
