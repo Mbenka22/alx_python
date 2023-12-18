@@ -1,5 +1,5 @@
 '''importing the module from models.rectangle which has various properties and methods'''
-from rectangle import Rectangle
+from models.rectangle import Rectangle
 '''the class Square which has inherited from the Rectangle class'''
 class Square(Rectangle):
     '''Initializes a Square instance.'''
