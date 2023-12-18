@@ -1,5 +1,5 @@
 '''Importing the fuction of base from the module models and has an empty __init__ file'''
-from models.base import Base
+from base import Base
 ''''creating the class Rectangle which has inherited from Base which has been stored in models.base'''
 class Rectangle(Base):
     '''Using the init function to create various private attributes'''
