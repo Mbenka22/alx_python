@@ -1,19 +1,12 @@
 from models.rectangle import Rectangle
+'''the class Square which has inherited from the Rectabngle class'''
 class Square(Rectangle):
+    '''instantiating the attributes'''
     def __init__(self, size, x=0, y=0, id=None):
-        """
-        Initializes a Square instance.
+        
+        '''Initializes a Square instance.'''
 
-        Args:
-        - size (int): The size (width/height) of the square.
-        - x (int, optional): The x-coordinate of the square's position (default is 0).
-        - y (int, optional): The y-coordinate of the square's position (default is 0).
-        - id (int, optional): The identifier for the square (default is None, which generates an ID).
-
-        Raises:
-        - TypeError: If size, x, y, or id are not integers.
-        - ValueError: If size is not greater than 0, or if x or y are negative.
-        """
+        
         super().__init__(size, x, y, id)
 # example        
 # if __name__ == "__main__":

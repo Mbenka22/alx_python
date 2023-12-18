@@ -68,30 +68,29 @@ class Rectangle(Base):
         '''Calculate the area of the rectangle using the public method def area(self)
 
         Returns:
-        - int: The area of the rectangle calculated as width * height. the functions from the decorators have been used'''
+        The area of the rectangle calculated as width * height. the functions from the decorators have been used'''
     
         
         return self.__width * self.__height
     
 
     def display(self):
-        
         '''Prints the representation of the Rectangle instance with '#' characters to stdout, accounting for x and y positions.
         '''
-        for _ in range(self.y):
-            print()
-        for _ in range(self.height):
-            print(' ' * self.x + '#' * self.width)
+        for i in range(self.y):
+             print()
+        for i in range(self.height):
+            print(' * self.x + ' '#' * self.width)
 
 
-
+       
+        '''Returns a string representation of the Rectangle instance.'''
     def __str__(self):
-        '''
-        Returns a string representation of the Rectangle instance.
+        
 
-        Returns:
-        - str: A string representing the Rectangle object in the format [Rectangle] (<id>) <x>/<y> - <width>/<height>
-        '''
+        ''' Returns:
+        - str: A string representing the Rectangle object in the format [Rectangle] (<id>) <x>/<y> - <width>/<height>'''
+        
         return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
     
 
