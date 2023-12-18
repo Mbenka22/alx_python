@@ -10,6 +10,7 @@ class Rectangle(Base):
         self.height = height
         self.x = x
         self.y = y
+       
     '''Creating the getters and setters for the various attributes'''
 # setter for width
     @property
@@ -29,13 +30,14 @@ class Rectangle(Base):
     def height(self):
         return self.__height
 
+
     @height.setter
     def height(self, value):
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
         elif value <= 0:
             raise ValueError("height must be > 0")
-        self.__width = value
+        self.__height = value
 # setter for x
     @property
     def x(self):
@@ -61,6 +63,10 @@ class Rectangle(Base):
         elif value < 0:
             raise ValueError("y must be >= 0")
         self.__y = value
+
+    '''defining the area of the rectangle'''
+    def area(self):
+        return self.__width * self.__height
 #examples
 # if __name__ == "__main__":
 
@@ -96,4 +102,17 @@ class Rectangle(Base):
 #     try:
 #         Rectangle(10, 2, 3, -1)
 #     except Exception as e:
-#         print("[{}] {}".format(e.__class__.__name__, e))        
+#         print("[{}] {}".format(e.__class__.__name__, e))   
+
+# example2  
+# if __name__ == "__main__":
+
+#     r1 = Rectangle(3, 2)
+#     print(r1.area())
+
+#     r2 = Rectangle(2, 10)
+#     print(r2.area())
+
+#     r3 = Rectangle(8, 7, 0, 0, 12)
+#     print(r3.area())
+
