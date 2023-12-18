@@ -93,6 +93,25 @@ class Rectangle(Base):
         - str: A string representing the Rectangle object in the format [Rectangle] (<id>) <x>/<y> - <width>/<height>
         '''
         return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
+    
+
+    def update(self, *args):
+        '''
+        Updates attributes of the Rectangle instance based on arguments provided.
+
+        Args:
+        - *args: Variable number of arguments to update attributes sequentially: id, width, height, x, y.
+        '''
+        if len(args) >= 1:
+            self.id = args[0]
+        if len(args) >= 2:
+            self.width = args[1]
+        if len(args) >= 3:
+            self.height = args[2]
+        if len(args) >= 4:
+            self.x = args[3]
+        if len(args) >= 5:
+            self.y = args[4]
 
 # examples4
 # if __name__ == "__main__":
@@ -171,5 +190,25 @@ class Rectangle(Base):
 #     print("---")
 
 #     r2 = Rectangle(3, 2, 1, 0)
-#     r2.display()
- 
+#     r2.display() 
+        
+# examples7
+# if __name__ == "__main__":
+
+#     r1 = Rectangle(10, 10, 10, 10)
+#     print(r1)
+
+#     r1.update(89)
+#     print(r1)
+
+#     r1.update(89, 2)
+#     print(r1)
+
+#     r1.update(89, 2, 3)
+#     print(r1)
+
+#     r1.update(89, 2, 3, 4)
+#     print(r1)
+
+#     r1.update(89, 2, 3, 4, 5)
+#     print(r1)
