@@ -75,11 +75,13 @@ class Rectangle(Base):
     
 
     def display(self):
-        """
-        Prints the representation of the Rectangle instance with '#' characters to stdout.
-        """
-        for _ in range(self.__height):
-            print('#' * self.__width)
+        
+        '''Prints the representation of the Rectangle instance with '#' characters to stdout, accounting for x and y positions.
+        '''
+        for _ in range(self.y):
+            print()
+        for _ in range(self.height):
+            print(' ' * self.x + '#' * self.width)
 
 
 
@@ -159,3 +161,15 @@ class Rectangle(Base):
 
 #     r2 = Rectangle(5, 5, 1)
 #     print(r2)
+    
+#examples6
+# if __name__ == "__main__":
+
+#     r1 = Rectangle(2, 3, 2, 2)
+#     r1.display()
+
+#     print("---")
+
+#     r2 = Rectangle(3, 2, 1, 0)
+#     r2.display()
+ 
