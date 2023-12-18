@@ -1,13 +1,33 @@
+'''importing the module from models.rectangle which has various properties and methods'''
 from models.rectangle import Rectangle
-'''the class Square which has inherited from the Rectabngle class'''
+'''the class Square which has inherited from the Rectangle class'''
 class Square(Rectangle):
-    '''instantiating the attributes'''
+    '''Initializes a Square instance.'''
     def __init__(self, size, x=0, y=0, id=None):
-        
-        '''Initializes a Square instance.'''
+        '''
+        Initializes a Square instance.
 
+        Args:
+        - size (int): The size (width/height) of the square.
+        - x (int, optional): The x-coordinate of the square's position (default is 0).
+        - y (int, optional): The y-coordinate of the square's position (default is 0).
+        - id (int, optional): The identifier for the square (default is None, which generates an ID).
+
+        Raises:
+        - TypeError: If size, x, y, or id are not integers.
+        - ValueError: If size is not greater than 0, or if x or y are negative.
+        '''
         
-        super().__init__(size, x, y, id)
+        super().__init__(size, size, x, y, id)
+
+    def __str__(self):
+        """
+        Returns a string representation of the Square instance.
+
+        Returns:
+        - str: A string representing the Square object in the format [Square] (<id>) <x>/<y> - <size> - in our case, width or height
+        """
+        return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y, self.width)
 # example        
 # if __name__ == "__main__":
 
