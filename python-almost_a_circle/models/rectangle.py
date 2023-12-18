@@ -5,11 +5,11 @@ class Rectangle(Base):
     '''Using the init function to create various private attributes'''
     def __init__(self, width, height, x=0, y=0, id=None):
         '''using the super function to access the values of the parent class'''
-        super().__init__(id)
         self.width = width
         self.height = height
         self.x = x
         self.y = y
+        super().__init__(id)
        
     '''Creating the getters and setters for the various attributes'''
 # setter for width
