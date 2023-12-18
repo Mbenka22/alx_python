@@ -7,10 +7,7 @@ class Square(Rectangle):
         
         ''' Initializes a Square instance.'''
         super().__init__(size, size, x, y, id=None)
-        self.size = size
-        self.x = x
-        self.y = y 
-        self.id = id
+        
         
 
     def __str__(self):
@@ -24,23 +21,23 @@ class Square(Rectangle):
     
     
 # examples   
-if __name__ == "__main__":
+# if __name__ == "__main__":
 
-    s1 = Square(5)
-    print(s1)
-    print(s1.area())
-    s1.display()
+    # s1 = Square(5)
+    # print(s1)
+    # print(s1.area())
+    # s1.display()
 
-    print("---")
+    # print("---")
 
-    s2 = Square(2, 2)
-    print(s2)
-    print(s2.area())
-    s2.display()
+    # s2 = Square(2, 2)
+    # print(s2)
+    # print(s2.area())
+    # s2.display()
 
-    print("---")
+    # print("---")
 
-    s3 = Square(3, 1, 3)
-    print(s3)
-    print(s3.area())
-    s3.display()
+    # s3 = Square(3, 1, 3)
+    # print(s3)
+    # print(s3.area())
+    # s3.display()
