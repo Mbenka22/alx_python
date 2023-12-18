@@ -21,17 +21,33 @@ class Square(Rectangle):
         return f"[Square] ({self.id}) {self.x}/{self.y} - {self.width}"
     
     @property
+    def width(self):
+        return self._width
+
+    @width.setter
+    def width(self, value):
+        if value <= 0:
+            raise ValueError("Width must be greater than zero.")
+        self._width = value
+
+    @property
+    def height(self):
+        return self._height
+
+    @height.setter
+    def height(self, value):
+        if value <= 0:
+            raise ValueError("Height must be greater than zero.")
+        self._height = value
+
+    @property
     def size(self):
-       return self.__size
-    
+        return self.width  # or self.height, as both are the same
+
     @size.setter
     def size(self, value):
-        if not isinstance(value, int):
-            raise TypeError("size must be an integer")
-        elif value < 0:
-            raise ValueError("size must be >= 0")
-        self.__size = value
-
+        self.width = value  # Set width
+        self.height = value  # Set height, ensuring the same value
 # example        
 # if __name__ == "__main__":
 
