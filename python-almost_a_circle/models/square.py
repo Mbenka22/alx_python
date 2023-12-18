@@ -1,25 +1,23 @@
 '''importing the module from models.rectangle which has various properties and methods'''
-from models.rectangle import Rectangle
+from rectangle import Rectangle
 '''the class Square which has inherited from the Rectangle class'''
 class Square(Rectangle):
     '''Initializes a Square instance.'''
     def __init__(self, size, x=0, y=0, id=None):
         '''
         Initializes a Square instance.'''
-        super().__init__(size, size, x, y, id=None)
-        self.size = size
-        self.x = x
-        self.y = y 
-        self.id = id
+
         
+        
+        super().__init__(size, size, x, y, id)
 
     def __str__(self):
-        '''
+        """
         Returns a string representation of the Square instance.
 
         Returns:
         - str: A string representing the Square object in the format [Square] (<id>) <x>/<y> - <size> - in our case, width or height
-        '''
+        """
         return f"[Square] ({self.id}) {self.x}/{self.y} - {self.width}"
     
     
