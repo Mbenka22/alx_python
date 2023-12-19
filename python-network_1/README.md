@@ -1,0 +1,1 @@
+The directory will have all my projects in ragrds to http , requests, browsers etc 
