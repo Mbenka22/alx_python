@@ -14,3 +14,4 @@ if 'X-Request-Id' in response.headers:
     print(f"The value of the X-Request-Id header is: {request_id}")
 else:
     print("X-Request-Id header not found in the response.")
+
