@@ -1,7 +1,7 @@
 import requests
 import sys
-
-def search_user(letter):
+url = sys.argv[1]
+def search_user(q):
     if letter:
         payload = {'q': letter}
     else:
