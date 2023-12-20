@@ -16,12 +16,12 @@ def get_request_id(url):
     except requests.RequestException as e:
         print({e})
 
-# if __name__ == "__main__":
-#     if len(sys.argv) != 2:
-#         print("usage:python script.py<URL>")
-#         sys.exit(1)
+if __name__ == "__main__":
+    if len(sys.argv) < 2:
+        print("https://alu-intranet.hbtn.io/status")
+        sys.exit(1)
     
-#     url = sys.argv[1]
-#     get_request_id(url)
+    url = sys.argv[1]
+    get_request_id(url)
 
 
