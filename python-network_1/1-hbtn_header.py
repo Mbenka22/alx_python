@@ -9,7 +9,7 @@ def get_request_id(url):
         response = requests.get(url)
         
         if response.status_code == 200:
-            request_id = response.headers.get("Holberton")
+            request_id = response.headers.get('X-Request-Id')
             print({request_id})
         else:
             print({response.status_code})
