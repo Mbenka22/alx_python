@@ -1,4 +1,4 @@
-"""importing the required modules sys and requests"""
+"""importing the required modules sys and requests to work on the project"""
 import requests
 import sys
 
