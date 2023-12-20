@@ -1,5 +1,4 @@
-
-
+"""importing the modules requests and sys"""
 import requests
 import sys
 URL = "https://alu-intranet.hbtn.io/status"
