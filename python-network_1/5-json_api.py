@@ -1,28 +1,23 @@
 import requests
 import sys
+"""Variable for storing url and a letter"""
 url = sys.argv[1]
-def search_user(q):
-    if letter:
-        payload = {'q': letter}
-    else:
-        payload = {'q': ''}
-    
-    response = requests.post('http://0.0.0.0:5000/search_user', data=payload)
-    
-    try:
-        json_response = response.json()
-        if json_response:
-            print("[{}] {}".format(json_response['id'], json_response['name']))
+q = "" if len (sys.argv) < 2 else (sys.arv[2])
 
-        else:
-            print("No result")
-    except ValueError:
-        print("Not a valid JSON")
-
-if __name__ == "__main__":
-    if len(sys.argv) > 1:
-        letter = sys.argv[1]
+"""data transmitted over our url in a json """
+data_send = {
+    'q' : q
+}
+"""post to url"""
+response = requests.post(url=url, data=data_send)
+try:
+   check_json = response.json()
+   if not check_json:
+      print("No result")
     else:
-        letter = ''
-    
-    search_user(letter)
+         id =check_json.get("id")
+         name = check_json.get("name")
+         print(f"{id} {name}")
+
+except ValueError:
+print()         
