@@ -1,40 +1,21 @@
-from sys import argv
+""""this script connect to MYSQL server,
+list all state from the database hbtn_0e_0_usa, it takes 3 argument"""
 import MySQLdb
+from sys import argv
+mysql_username=argv[1]
+mysql_password=argv[2]
+db_name=argv[3]
 
-def list_states(username, password, database_name):
-    try:
-        # Connect to the MySQL server
-        db = MySQLdb.connect(host='localhost', port=3006, user=username, passwd=password, db=database_name)
-        cursor = db.cursor()
+connect = MySQLdb.connect(
+        host='localhost', user=mysql_username, passwd=mysql_password,
+        database=db_name, port=3006)
+from sys import argv
 
-        # Execute the SQL query to select all states
-        query = "SELECT * FROM states ORDER BY id;"
-        cursor.execute(query)
+cursor = connect.cursor()
+query = "SELECT * FROM states ORDER BY id ASC"
+cursor.execute(query)
+for row in cursor:
+    print(row)
+cursor.close()
+connect.close()
 
-        # Fetch all the results
-        states = cursor.fetchall()
-
-        # Print the list of states
-        print("List of States:")
-        for state in states:
-            print(state)
-
-    except MySQLdb.Error as e:
-        print(f"Error connecting to the database: {e}")
-    finally:
-        # Close the database connection
-        if db:
-            db.close()
-
-if __name__ == "__main__":
-    # Check if the correct number of arguments is provided
-    if len(sys.argv) != 4:
-        print("Usage: python script.py <mysql_username> <mysql_password> <database_name>")
-    else:
-        # Extract MySQL credentials from command line arguments
-        mysql_username = sys.argv[1]
-        mysql_password = sys.argv[2]
-        database_name = sys.argv[3]
-
-        # Call the function to list states
-        list_states(mysql_username, mysql_password, database_name)
