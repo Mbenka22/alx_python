@@ -1,4 +1,4 @@
-""""this script connect to MYSQL server,
+""""this script connects to MYSQL server,
 list all state from the database hbtn_0e_0_usa, it takes 3 argument"""
 import MySQLdb
 from sys import argv
@@ -9,7 +9,7 @@ db_name=argv[3]
 connect = MySQLdb.connect(
         host='localhost', user=mysql_username, passwd=mysql_password,
         database=db_name, port=3006)
-from sys import argv
+
 
 cursor = connect.cursor()
 query = "SELECT * FROM states ORDER BY id ASC"
