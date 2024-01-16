@@ -6,11 +6,6 @@ Results must be sorted in ascending order by states.id
 import MySQLdb
 import sys
 
-# Check if correct number of arguments is provided
-if len(sys.argv) != 4:
-    print("Usage: python script.py <mysql_username> <mysql_password> <database_name>")
-    sys.exit(1)
-
 # Retrieve command line arguments
 mysql_username = sys.argv[1]
 mysql_password = sys.argv[2]
