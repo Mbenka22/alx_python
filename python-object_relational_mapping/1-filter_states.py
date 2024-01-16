@@ -4,7 +4,7 @@ Your script should connect to a MySQL server running on localhost at port 3306
 Results must be sorted in ascending order by states.id
 """
 import MySQLdb
-from sys import argv
+import sys
 
 # Check if correct number of arguments is provided
 if len(sys.argv) != 4:
