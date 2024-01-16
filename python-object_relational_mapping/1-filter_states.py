@@ -4,7 +4,7 @@ Your script should connect to a MySQL server running on localhost at port 3306
 Results must be sorted in ascending order by states.id
 """
 import MySQLdb
-import sys
+from sys import argv
 
 # Check if correct number of arguments is provided
 if len(sys.argv) != 4:
@@ -25,7 +25,7 @@ cursor = conn.cursor()
 # Execute SQL query to select states starting with 'N'
 sql_query = """
     SELECT * FROM states
-    WHERE name LIKE 'n%'
+    WHERE name LIKE 'N%'
     ORDER BY states.id;
 """
 
