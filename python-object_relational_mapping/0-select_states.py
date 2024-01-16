@@ -16,7 +16,7 @@ if __name__=='__main__':
     query = "SELECT * FROM states ORDER BY id ASC"
     cursor.execute(query)
     for row in cursor:
-        print(row)
+      print(row)
     cursor.close()
     connect.close()
 
