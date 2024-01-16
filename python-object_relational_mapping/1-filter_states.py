@@ -17,7 +17,7 @@ mysql_password = sys.argv[2]
 database_name = sys.argv[3]
 
 # Establish a connection to MySQL server
-conn = MySQLdb.connect(host="localhost", port=3306, user=mysql_username, passwd=mysql_password, db=database_name)
+conn = MySQLdb.connect(host="localhost", port=3006, user=mysql_username, passwd=mysql_password, db=database_name)
 
 # Create a cursor
 cursor = conn.cursor()
@@ -25,18 +25,18 @@ cursor = conn.cursor()
 # Execute SQL query to select states starting with 'N'
 sql_query = """
     SELECT * FROM states
-    WHERE name LIKE 'N%'
+    WHERE name LIKE 'n%'
     ORDER BY states.id;
 """
 
-# Execute the query
+
 cursor.execute(sql_query)
 
-# Fetch and display the results
+
 results = cursor.fetchall()
 for row in results:
     print(row)
 
-# Close the cursor and connection
+
 cursor.close()
 conn.close()
