@@ -21,7 +21,7 @@ cursor = conn.cursor()
 sql_query = """
     SELECT * FROM states
     WHERE name LIKE 'N%'
-    ORDER BY states.id;
+    ORDER BY states.id ASC;
 """
 
 
