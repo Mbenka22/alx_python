@@ -3,7 +3,7 @@ import MySQLdb
 from sys import argv
 mysql_username=argv(1)
 mysql_password=argv(2)
-db_name=argv(4)
+db_name=argv(3)
 
 connect=MySQLdb.connect(
     host='localhost',
