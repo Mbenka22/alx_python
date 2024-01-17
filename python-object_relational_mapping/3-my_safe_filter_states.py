@@ -16,3 +16,7 @@ cursor=connect.cursor()
 query="Arizona'; TRUNCATE TABLE states ; SELECT * FROM states WHERE name = '"
 cursor.execute(query)
 
+
+cursor.close
+connect.close
+
