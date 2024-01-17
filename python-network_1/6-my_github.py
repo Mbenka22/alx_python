@@ -1,4 +1,5 @@
 '''import request and sys '''
+'''import request and sys '''
 import requests
 from requests.auth import HTTPBasicAuth
 import sys
@@ -18,4 +19,5 @@ try:
     print(user_data['id'])
    else:
     print("None")
-except ValueError:        
+except ValueError:
+  print("None")     
