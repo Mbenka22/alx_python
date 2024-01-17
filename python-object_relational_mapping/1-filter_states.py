@@ -1,33 +1,21 @@
-"""write a script that lists all states with a name starting with N (upper N) from the database hbtn_0e_0_usa:Your script should take 3 arguments: mysql username, mysql password and database name (no argument validation needed)
-
-"""
 import MySQLdb
-import sys
+from sys import argv
 
-# Retrieve command line arguments
-mysql_username = sys.argv[1]
-mysql_password = sys.argv[2]
-database_name = sys.argv[3]
+if __name__ == '__main__':  # Note the double underscores in __name_
 
-# Establish a connection to MySQL server
-conn = MySQLdb.connect(host="localhost", port=3006, user=mysql_username, passwd=mysql_password, db=database_name)
+    MySql_username = argv[1]
+    MySql_password = argv[2]
+    db_name = argv[3]
 
-# Create a cursor
-cursor = conn.cursor()
+    connect= MySQLdb.connect(host='localhost', passwd=MySql_password, port=3006, user=MySql_username, db=db_name)
+    cursor = connect.cursor()
+    cursor.execute('SELECT * FROM states WHERE BINARY LEFT(name, 1) = "N" ORDER BY id ASC')
+    '''This query will select the name column from the table where the first letter of the name is a capital 'N'.
+      The BINARY keyword is used to perform a case-sensitive comparison.'''
+    rows = cursor.fetchall()
 
-# Execute SQL query to select states starting with 'N'
-sql_query = """
-    query = "SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY id ASC;"
-"""
+    for row in rows:
+        print(row) 
 
-
-cursor.execute(sql_query)
-
-
-results = cursor.fetchall()
-for row in results:
-    print(row)
-
-
-cursor.close()
-conn.close()
+    cursor.close()
+    connect.close()
