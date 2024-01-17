@@ -19,9 +19,7 @@ cursor = conn.cursor()
 
 # Execute SQL query to select states starting with 'N'
 sql_query = """
-    SELECT * FROM states
-    WHERE name LIKE 'N%'
-    ORDER BY states.id ASC;
+    query = "SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY id ASC;"
 """
 
 
