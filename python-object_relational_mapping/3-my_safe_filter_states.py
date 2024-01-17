@@ -13,7 +13,8 @@ connect=MySQLdb.connect(
     port=3006)
 
 cursor=connect.cursor()
-query="Arizona'; TRUNCATE TABLE states ; SELECT * FROM states WHERE name = '"
+query = "SELECT * FROM states WHERE name = %s ORDER BY id ASC"
+    
 cursor.execute(query)
 
 
