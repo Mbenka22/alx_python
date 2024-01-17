@@ -1,4 +1,4 @@
-"Trunctate"
+"Truncate"
 import MySQLdb
 from sys import argv
 
