@@ -1,4 +1,4 @@
-"""importing various models to work with orm such as sqlalchemy"""
+"""importing various models to work with orm such as sqlalchemy such as creati_engine and the object state"""
 from sqlalchemy import create_engine, Column, String, Integer
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
