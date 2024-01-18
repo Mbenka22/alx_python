@@ -9,7 +9,7 @@ if __name__ == '__main__':
     # statename_searched = input("enter state name:  ")
     
 
-    connect = MySQLdb.connect(host='localhost', user=mysql_username, passwd=mysql_password, port=3306, db=db_name)
+    connect = MySQLdb.connect(host='localhost', user=mysql_username, passwd=mysql_password, port=3006, db=db_name)
     cursor = connect.cursor()
     sql_query = """SELECT cities.id,cities.name, states.name
                FROM cities
