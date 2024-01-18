@@ -15,17 +15,17 @@ class State(Base):
     def __repr__(self):
         return f"({self.id} {self.name})"
 
-# SQLite import and connection string
-engine = create_engine('sqlite:///mydb.hbtn_0e_6_usa', echo=True)
+# # SQLite import and connection string
+# engine = create_engine('sqlite:///mydb.hbtn_0e_6_usa', echo=True)
 
-# Create the table
-Base.metadata.create_all(bind=engine)
+# # Create the table
+# Base.metadata.create_all(bind=engine)
 
-# Create a session
-Session = sessionmaker(bind=engine)
-session = Session()
+# # Create a session
+# Session = sessionmaker(bind=engine)
+# session = Session()
 
-# #adding a state to the database
-# new_state = State(name="New York")
-# session.add(new_state)
-# session.commit()
+# # #adding a state to the database
+# # new_state = State(name="New York")
+# # session.add(new_state)
+# # session.commit()
