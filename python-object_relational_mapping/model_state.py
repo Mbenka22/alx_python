@@ -1,4 +1,4 @@
-"""importing various models to work with orm"""
+"""importing various models to work with orm You must use the module SQLAlchemy"""
 from sqlalchemy import create_engine, Column, String, Integer
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
