@@ -1,4 +1,4 @@
-"""importing various models """
+"""importing various models to work with orm"""
 from sqlalchemy import create_engine, Column, String, Integer
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
@@ -10,8 +10,8 @@ class State(Base):
     id = Column(Integer, primary_key=True, autoincrement=True, nullable=False)
     name = Column(String(128), nullable=False)
 
-    # def __init__(self, name):
-    #     self.name = name
+    def __init__(self, name):
+        self.name = name
 
     # def __repr__(self):
     #     return f"({self.id} {self.name})"
