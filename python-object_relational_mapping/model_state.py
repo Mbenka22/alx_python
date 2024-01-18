@@ -25,7 +25,7 @@ Base.metadata.create_all(bind=engine)
 Session = sessionmaker(bind=engine)
 session = Session()
 
-#adding a state to the database
-new_state = State(name="New York")
-session.add(new_state)
-session.commit()
+# #adding a state to the database
+# new_state = State(name="New York")
+# session.add(new_state)
+# session.commit()
