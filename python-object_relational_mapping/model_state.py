@@ -1,4 +1,4 @@
-"""Documenting my python script with the imported modules"""
+'''Module to be imported'''
 from sqlalchemy import create_engine, Column, String, Integer
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
