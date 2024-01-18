@@ -10,11 +10,11 @@ class State(Base):
     id = Column(Integer, primary_key=True, autoincrement=True, nullable=False)
     name = Column(String(128), nullable=False)
 
-    def __init__(self, name):
-        self.name = name
+    # def __init__(self, name):
+    #     self.name = name
 
-    def __repr__(self):
-        return f"({self.id} {self.name})"
+    # def __repr__(self):
+    #     return f"({self.id} {self.name})"
 
 # # SQLite import and connection string
 # engine = create_engine('sqlite:///mydb.hbtn_0e_6_usa', echo=True)
