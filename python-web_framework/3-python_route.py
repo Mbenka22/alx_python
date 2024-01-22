@@ -17,7 +17,7 @@ def c_route(text):
     formatted_text = text.replace('_', ' ')
     return f"C {formatted_text}"
 #python parameters
-@app.route('/')
+@app.route('/python/<text>')
 def display_python():
     text = "is_cool"
     formatted_text = text.replace("_", " ")
