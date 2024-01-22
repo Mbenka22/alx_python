@@ -9,6 +9,10 @@ def hello_hbnb():
 @app.route('/hbnb',strict_slashes=False)
 def hbnb():
     return "HBNB"
+@app.route('/user/<username>')
+def show_user_profile(username):
+    # Here, 'username' is a variable part of the URL
+    return f"User {username}"
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
