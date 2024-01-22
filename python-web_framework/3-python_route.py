@@ -1,5 +1,5 @@
 """Basic flask web server using flask"""
-from flask import Flask
+from flask import Flask ,render_template_string
 
 app = Flask(__name__)
 #home
@@ -17,10 +17,13 @@ def c_route(text):
     formatted_text = text.replace('_', ' ')
     return f"C {formatted_text}"
 #python parameters
-@app.route('/python/<text>',strict_slashes=False)
-def python_route(text):
-    formatted_text=text.replace('_','')
-    return f"python{formatted_text}"
+@app.route('/')
+def display_python():
+    text = "is_cool"
+    formatted_text = text.replace("_", " ")
+    message = f"Python {formatted_text}"
+    return render_template_string(message)
+
 
 
 if __name__ == '__main__':
