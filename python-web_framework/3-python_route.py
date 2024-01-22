@@ -17,13 +17,10 @@ def c_route(text):
     formatted_text = text.replace('_', ' ')
     return f"C {formatted_text}"
 #python parameters
-@app.route('/python/', defaults={'text': 'is cool'})
-def display_python():
-    text='is cool'
+@app.route('/python/<text>', strict_slashes=False)
+def display_python(text="is_cool"):
     formatted_text = text.replace("_", " ")
-    message = f"Python {formatted_text}"
-    return render_template_string(message)
-
+    return f"Python {formatted_text}"
 
 
 if __name__ == '__main__':
