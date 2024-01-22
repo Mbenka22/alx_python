@@ -17,7 +17,7 @@ app = Flask(__name__)
 
 ############################# TO DO 1 ############################
 # Add your code to connect to the database here
-app.config['SQLALCHEMY_DATABASE_URI'] = f'mysql://{db_username}:{db_password}@{db_host}/{db_name}'
+app.config['SQLALCHEMY_DATABASE_URI'] = f'mysql://{"Mirriam"}:{"florence2024#"}@{"localhost"}/{"alx_flask_db"}'
 db = SQLAlchemy(app)
 ###############################################################
 
