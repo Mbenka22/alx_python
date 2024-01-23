@@ -23,6 +23,11 @@ def display_python(text="is_cool"):
     formatted_text = text.replace("_", " ")
     return f"Python {formatted_text}"
 
+# n is a number" only if n is an integer
+@app.route('/number/<int:n>', strict_slashes=False)
+def number(n):
+    return "{} is a number".format(n)
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000,debug=True)
