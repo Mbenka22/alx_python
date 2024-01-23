@@ -1,5 +1,5 @@
 """Basic flask web server using flask"""
-from flask import Flask, render_template ,render_template_string 
+from flask import Flask, render_template ,render_template_string  
 
 app = Flask(__name__)
 #home
@@ -34,7 +34,7 @@ def is_number(n):
 
 @app.route('/number_template/<int:n>')
 def display_number_template(n):
-    if isinstance(n, int):
+    #if isinstance(n, int):
         return render_template('5-number.html', n=n)
 
 
