@@ -38,9 +38,10 @@ def display_number_template(n):
         return render_template('5-number.html', n=n)
 
 # /number_odd_or_even/<n>
-@app.route('/number_odd_or_even/<int:n>')
+@app.route('/number_odd/<int:n>')
 def number_odd_or_even(n):
     odd_even = 'even' if n % 2 == 0 else 'odd'
     return render_template('6-number_odd_even_template.html', number=n, odd_even=odd_even)
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000,debug=True)
