@@ -48,8 +48,8 @@ def index():
 def addUser():
     if request.method =='POST':
         try:
-            name= request.form['name']
-            email=request.form['email']
+            name= request.form.get['name']
+            email=request.form.get['email']
 
             new_user = User(name=name)
             db.session.add(new_user)
