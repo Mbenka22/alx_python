@@ -106,7 +106,7 @@ def delete_user(user_id):
         db.session.commit()
         flash("User deleted successfully!", 'success')
 
-    return redirect(url_for('index'))
+    return render_template('delete_user.html')
 
 if __name__ == '__main__':
     db.create_all
