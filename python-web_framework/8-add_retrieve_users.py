@@ -17,7 +17,7 @@ app = Flask(__name__)
 
 ############################# TO DO 1 ############################
 # Add your code to connect to the database here
-app.config['SQLALCHEMY_DATABASE_URI'] = f'mysql://{"mirriam"}:{"florence2024#"}@{"localhost"}/{"alx_flask_db"}'
+app.config['SQLALCHEMY_DATABASE_URI'] = f'mysql://{db_username}:{db_password}@{db_host}/{db_name}'
 db = SQLAlchemy(app)
 ###############################################################
 
@@ -59,12 +59,7 @@ def addUser():
         except Exception as e:
             db.session.rollback()
             flash(f'Error: {str(e)}','error')
-            
-            
-
-
-
-    return "Hello, ALX Flask!"
+        return render_template('add_user.html')
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
