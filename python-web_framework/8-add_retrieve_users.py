@@ -46,6 +46,7 @@ def index():
 
 @app.route('/add_user' ,methods=['GET','POST'], strict_slashes=False)
 def addUser():
+
     if request.method == 'POST':
         try:
             name = request.form.get('name')
@@ -60,6 +61,10 @@ def addUser():
             db.session.rollback()
             flash(f'Error: {str(e)}','error')
         return render_template('add_user.html')
+@app.route('/Users',strict_slashes=False)
+def user():
+    all_users = user.query.all
+    return render_template('users.html',users=all_users)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
