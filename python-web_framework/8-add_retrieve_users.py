@@ -44,5 +44,27 @@ create_tables()  # This calls the function to create tables
 def index():
     return "Hello, ALX Flask!"
 
+@app.route('/add_user' ,methods=['GET','POST'], strict_slashes=False)
+def addUser():
+    if request.method =='POST':
+        try:
+            name= request.form['name']
+            email=request.form['email']
+
+            new_user = User(name=name)
+            db.session.add(new_user)
+            db.session.commit()
+
+            flash('User added successfully!','success')
+        except Exception as e:
+            db.session.rollback()
+            flash(f'Error: {str(e)}','error')
+            
+            
+
+
+
+    return "Hello, ALX Flask!"
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)

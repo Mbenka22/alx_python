@@ -15,7 +15,7 @@ db_host = 'localhost'
 
 app = Flask(__name__)
 
-############################# TO DO 1 ############################
+########## TO DO 1 #######
 # Add your code to connect to the database here
 app.config['SQLALCHEMY_DATABASE_URI'] = f'mysql://{"mirriam"}:{"florence2024#"}@{"localhost"}/{"alx_flask_db"}'
 db = SQLAlchemy(app)
@@ -30,7 +30,7 @@ class User(db.Model):
 
     def __repr__(self):
         return f'<User {self.username}>'
-#################################################################
+#############################################################
 
 # Create the database tables
 def create_tables():
