@@ -61,9 +61,9 @@ def addUser():
             db.session.rollback()
             flash(f'Error: {str(e)}','error')
         return render_template('add_user.html')
-@app.route('/Users',strict_slashes=False)
-def user():
-    all_users = user.query.all
+@app.route('/users',strict_slashes=False)
+def User():
+    all_users = User.query.all
     return render_template('users.html',Users=all_users)
 
 if __name__ == '__main__':
