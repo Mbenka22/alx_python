@@ -46,10 +46,10 @@ def index():
 
 @app.route('/add_user' ,methods=['GET','POST'], strict_slashes=False)
 def addUser():
-    if request.method =='POST':
+    if request.method == 'POST':
         try:
-            name= request.form.get['name']
-            email=request.form.get['email']
+            name = request.form.get('name')
+            email = request.form.get('email')
 
             new_user = User(name=name)
             db.session.add(new_user)
