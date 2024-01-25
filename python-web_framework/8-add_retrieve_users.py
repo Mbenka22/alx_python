@@ -64,7 +64,7 @@ def addUser():
 @app.route('/Users',strict_slashes=False)
 def user():
     all_users = user.query.all
-    return render_template('users.html',users=all_users)
+    return render_template('users.html',Users=all_users)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
