@@ -65,6 +65,49 @@ def addUser():
 def users():
     all_users=User.query.all()
     return render_template('users.html',users=all_users)
+#UPDATE USERS
+# Routes
+@app.route('/update_user/<int:user_id>', methods=['GET', 'POST'])
+def update_user(user_id):
+    user = User.query.get(user_id)
+
+    if user is None:
+        flash("User not found", 'error')
+        return redirect(url_for('index'))
+
+    if request.method == 'POST':
+        # Handle POST request
+        updated_name = request.form.get('name')
+        updated_email = request.form.get('email')
+
+        if not updated_name or not updated_email:
+            flash("Both name and email must be provided", 'error')
+        else:
+            # Validate and update user
+            existing_user = User.query.filter(User.email == updated_email, User.id != user_id).first()
+            if existing_user:
+                flash("Email already taken. Choose a different email.", 'error')
+            else:
+                user.name = updated_name
+                user.email = updated_email
+                db.session.commit()
+                flash("User updated successfully!", 'success')
+
+    return render_template('update_user.html', user=user)
+#  delete Routes
+@app.route('/delete_user/<int:user_id>', methods=['GET'])
+def delete_user(user_id):
+    user = User.query.get(user_id)
+
+    if user is None:
+        flash("User not found", 'error')
+    else:
+        db.session.delete(user)
+        db.session.commit()
+        flash("User deleted successfully!", 'success')
+
+    return render_template('delete_user.html')
 
 if __name__ == '__main__':
+    db.create_all
     app.run(host='0.0.0.0', port=5000, debug=True)
