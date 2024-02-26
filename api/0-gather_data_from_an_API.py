@@ -1,5 +1,4 @@
 import requests
-import sys
 
 def get_employee_info(employee_id):
     # Get employee details
@@ -24,9 +23,6 @@ def get_employee_info(employee_id):
             print(f"\t{todo['title']}")
 
 if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        print("Usage: python script.py EMPLOYEE_ID")
-        sys.exit(1)
-    
-    employee_id = int(sys.argv[1])
+    employee_id = int(input("Enter the employee ID: "))
     get_employee_info(employee_id)
+
