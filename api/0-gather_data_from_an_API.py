@@ -31,4 +31,5 @@ print(f"Employee {employee_name} is done with tasks ({task_done}/{total_task_num
 
 
 for task in todo_data:
-    print(f"\t{task['title']}")
+   print(f"{task['title']}")
+
