@@ -1,8 +1,8 @@
 import requests
 import sys
 
-def get_employee_info(employee_id):
-    """employee details from the given url by appending the employee_id """
+def employee_info(employee_id):
+    """ getting employee details from the given url by appending the employee_id  to the given url"""
     employee_url = f'https://jsonplaceholder.typicode.com/users/{employee_id}'
     employee_response = requests.get(employee_url)
     employee_data = employee_response.json()
@@ -20,7 +20,7 @@ def get_employee_info(employee_id):
     """Display the employee's name and the number of done and total tasks."""
     print(f"Employee {employee_data['name']} is done with tasks({number_of_done_tasks}/{total_number_of_tasks}):")
 
-    """Display the title of the completed tasks."""
+    """Done tasks."""
     for task in completed_tasks:
         print(f"\t{task['title']}")
 
@@ -28,11 +28,11 @@ def get_employee_info(employee_id):
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
-        print("Usage: python script")
+        print("Usage: python script_name.py employee_id.")
         sys.exit(1)
 
     """employee id from the second argument"""
     employee_id = int(sys.argv[1])
 
     """calling the function"""
-    get_employee_info(employee_id)
+    employee_info(employee_id)
