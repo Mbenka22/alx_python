@@ -1,35 +1,38 @@
 import requests
 import sys
 
-if len(sys.argv) != 2:
-    sys.exit(1)
+def get_employee_info(employee_id):
+    """employee details from the given url by appending the employee_id """
+    employee_url = f'https://jsonplaceholder.typicode.com/users/{employee_id}'
+    employee_response = requests.get(employee_url)
+    employee_data = employee_response.json()
 
-employee_id = int(sys.argv[1])
-'''required urls for employee and the tasks '''
-employee_url = f"https://jsonplaceholder.typicode.com/users/{employee_id}" 
-todos_url = f"https://jsonplaceholder.typicode.com/users/{employee_id}/todos"
+    """getting employee's todo by appending the todo path the url"""
+    todos_url = f'https://jsonplaceholder.typicode.com/users/{employee_id}/todos'
+    todos_response = requests.get(todos_url)
+    todos_data = todos_response.json()
 
-employee_response = requests.get(employee_url)
-todos_response = requests.get(todos_url)
+ 
+    completed_tasks = [task for task in todos_data if task['completed']]
+    number_of_done_tasks = len(completed_tasks)
+    total_number_of_tasks = len(todos_data)
 
-if employee_response.status_code != 200 or todos_response.status_code != 200:
-    sys.exit(1)
+    """Display the employee's name and the number of done and total tasks."""
+    print(f"Employee {employee_data['name']} is done with tasks({number_of_done_tasks}/{total_number_of_tasks}):")
 
-employee_data = employee_response.json()
-todo_data = todos_response.json()
-employee_name = employee_data.get("name", "anonymous employee")
-
-task_done= 0
-total_task_number= 0
-for task in todo_data:
-    if task["completed"]:
-        task_done += 1
-    total_task_number += 1
+    """Display the title of the completed tasks."""
+    for task in completed_tasks:
+        print(f"\t{task['title']}")
 
 
-print(f"Employee {employee_name} is done with tasks ({task_done}/{total_task_number})")
 
+if __name__ == "__main__":
+    if len(sys.argv) != 2:
+        print("")
+        sys.exit(1)
 
-for task in todo_data:
-   print(f"\t{task['title']}") 
+    """employee id from the second argument"""
+    employee_id = int(sys.argv[1])
 
+    """calling the function"""
+    get_employee_info(employee_id)
