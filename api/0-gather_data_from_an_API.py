@@ -1,26 +1,34 @@
 import requests
 import sys
 
-def get_employee_todo_progress(employee_id):
-    employee_response = requests.get(f"https://jsonplaceholder.typicode.com/users/{employee_id}")
-    employee_data = employee_response.json()
-    employee_name = employee_data['name']
+if len(sys.argv) != 2:
+    sys.exit(1)
 
-    todo_response = requests.get(f"https://jsonplaceholder.typicode.com/users/{employee_id}/todos")
-    todo_data = todo_response.json()
+employee_id = int(sys.argv[1])
 
-    total_tasks = len(todo_data)
-    done_tasks = sum(1 for todo in todo_data if todo['completed'])
+employee_url = f"https://jsonplaceholder.typicode.com/users/{employee_id}"
+todos_url = f"https://jsonplaceholder.typicode.com/users/{employee_id}/todos"
 
-    print(f" {employee_name} is done with tasks ({done_tasks}/{total_tasks}):")
-    for todo in todo_data:
-        if todo['completed']:
-            print(f"\t{todo['title']}")
+employee_response = requests.get(employee_url)
+todos_response = requests.get(todos_url)
 
-if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        print("Usage: EMPLOYEE_ID")
-        sys.exit(1)
-    
-    employee_id = int(sys.argv[1])
-    get_employee_todo_progress(employee_id)
+if employee_response.status_code != 200 or todos_response.status_code != 200:
+    sys.exit(1)
+
+employee_data = employee_response.json()
+todo_data = todos_response.json()
+employee_name = employee_data.get("name", "anonymous employee")
+
+number_of_done_tasks = 0
+total_number_of_tasks = 0
+for task in todo_data:
+    if task["completed"]:
+        number_of_done_tasks += 1
+    total_number_of_tasks += 1
+
+
+print(f"Employee {employee_name} is done with tasks ({number_of_done_tasks}/{total_number_of_tasks})")
+
+
+for task in todo_data:
+    print(f"\t{task['title']}")
