@@ -28,7 +28,7 @@ def get_employee_info(employee_id):
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
-        print("")
+        print("Usage: python script")
         sys.exit(1)
 
     """employee id from the second argument"""
