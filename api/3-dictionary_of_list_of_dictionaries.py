@@ -1,5 +1,7 @@
-import requests
 import json
+import requests
+
+
 
 def get_employee_info(employee_id):
     """Fetch the employee details from the given URL by appending the employee_id and convert the data to JSON."""
