@@ -29,14 +29,24 @@ def employee_info(employee_id):
         )
         tasks.append(task_details)
 
-    # Write task details to a CSV file
-    filename = f'{employee_id}.csv'
-    with open(filename, 'w', newline='') as csvfile:
-        csv_writer = csv.writer(csvfile)
-        csv_writer.writerow(['USER_ID', 'USERNAME', 'TASK_COMPLETED_STATUS', 'TASK_TITLE'])
-        csv_writer.writerows(tasks)
+    """creating csv file for the empoyee"""
+    file_name = f"{employee_id}.csv"
+    with open(file_name, "w", newline='') as csv_file:
+        fieldnames = ['USER_ID', 'USERNAME', 'TASK_COMPLETED_STATUS', 'TASK_TITLE' ]
+        writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
 
-    print(f"Task details for employee {employee_id} have been saved to {filename}.")
+        """Write the csv headers"""
+        writer.writeheader()
+
+        """Write the rows under the epecified columns"""
+        for task in todos_data:
+            writer.writerow({
+                'USER_ID': employee_id,
+                'USERNAME': employee_data['username'],
+                'TASK_COMPLETED_STATUS': task['completed'],
+                'TASK_TITLE': task['title']
+            })
+
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
