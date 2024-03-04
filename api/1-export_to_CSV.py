@@ -2,38 +2,29 @@ import csv
 import requests
 import sys
 
-if len(sys.argv) != 2:
-    sys.exit(1)
 
-employee_id = int(sys.argv[1])
+url = "https://jsonplaceholder.typicode.com/users"
+user_id = sys.argv[1]
+endpoint1 = f"{url}/{user_id}"
+endpoint2 = f"{url}/{user_id}/todos"
 
-employee_url = f"https://jsonplaceholder.typicode.com/users/{employee_id}"
-todos_url = f"https://jsonplaceholder.typicode.com/users/{employee_id}/todos"
+response1 = requests.get(url=endpoint1)
+response2 = requests.get(url=endpoint2)
 
-employee_response = requests.get(employee_url)
-todos_response = requests.get(todos_url)
+data1 = response1.json()
+data2 = response2.json()
+myarray = []
+csvheader = ['USER_ID', 'USERNAME', 'TASK_COMPLETED_STATUS', 'TASK_TITLE']
 
-if employee_response.status_code != 200 or todos_response.status_code != 200:
-    sys.exit(1)
-
-employee_data = employee_response.json()
-todo_data = todos_response.json()
-employee_name = employee_data.get("name", "unknown employee")
-employee_username = employee_data.get("username", "unkown employee")
-
-csv_filename = f"{employee_id}.csv"
-
-with open(csv_filename, mode="w", newline="") as csv_file:
-    csv_writer = csv.writer(csv_file)
-
-    csv_writer.writerow(["USER_ID", "USERNAME", "TASK_COMPLETED_STATUS", "TASK_TITLE"])
-
-for task in todo_data:
-        task_completed_status = "Completed" if task["completed"] else "Not Completed"
-        csv_writer.writerow([employee_id, employee_username, task_completed_status, task["title"]])
+for task in data2:  # Iterate over tasks from the second endpoint
+    listing = [task['userId'], data1['username'], task['completed'], task['title']]
+    myarray.append(listing)
 
 
-with open(csv_filename, 'r') as f:
-     pass
-   
-    
+with open(f"{user_id}.csv", 'w', encoding='UTF8', newline='') as f:
+    writer = csv.writer(f)
+
+    writer.writerow(csvheader)
+    writer.writerows(myarray)
+
+
