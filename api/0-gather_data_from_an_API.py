@@ -5,7 +5,7 @@ def employee_info(employee_id):
     """ getting employee details from the given url by appending the employee_id  to the given url"""
     employee_url = f'https://jsonplaceholder.typicode.com/users/{employee_id}'
     employee_response = requests.get(employee_url)
-    employee_data = employee_response.json()
+    employee_data = employee_response()
 
     """getting employee's todo's by appending the todo path the url"""
     todos_url = f'https://jsonplaceholder.typicode.com/users/{employee_id}/todos'
