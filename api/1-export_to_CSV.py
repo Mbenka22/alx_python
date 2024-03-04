@@ -46,6 +46,7 @@ def employee_info(employee_id):
                 'TASK_COMPLETED_STATUS': task['completed'],
                 'TASK_TITLE': task['title']
             })
+            print(f"CSV file'{file_name}'generated successfully.")
 
 
 if __name__ == "__main__":
