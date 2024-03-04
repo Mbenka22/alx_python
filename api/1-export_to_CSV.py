@@ -1,43 +1,39 @@
-""" Using what you did in the task #0, extend your Python script to export
-data in the CSV format. """
 import csv
 import requests
-from sys import argv
+import sys
+
+if len(sys.argv) != 2:
+    sys.exit(1)
+
+employee_id = int(sys.argv[1])
+
+employee_url = f"https://jsonplaceholder.typicode.com/users/{employee_id}"
+todos_url = f"https://jsonplaceholder.typicode.com/users/{employee_id}/todos"
+
+employee_response = requests.get(employee_url)
+todos_response = requests.get(todos_url)
+
+if employee_response.status_code != 200 or todos_response.status_code != 200:
+    sys.exit(1)
+
+employee_data = employee_response.json()
+todo_data = todos_response.json()
+employee_name = employee_data.get("name", "unknown employee")
+employee_username = employee_data.get("username", "unkown employee")
+
+csv_filename = f"{employee_id}.csv"
+
+with open(csv_filename, mode="w", newline="") as csv_file:
+    csv_writer = csv.writer(csv_file)
+
+    csv_writer.writerow(["USER_ID", "USERNAME", "TASK_COMPLETED_STATUS", "TASK_TITLE"])
+
+for task in todo_data:
+        task_completed_status = "Completed" if task["completed"] else "Not Completed"
+        csv_writer.writerow([employee_id, employee_username, task_completed_status, task["title"]])
 
 
-def export_to_CSV(sizeofReq):
-    """ The task define export to the CSV format"""
-
-    # Variables
-    allTasks = []
-
-    link = "https://jsonplaceholder.typicode.com"
-
-    # get requests
-    usersRes = requests.get("{}/users/{}".format(link, sizeofReq))
-    todosRes = requests.get("{}/users/{}/todos".format(link, sizeofReq))
-
-    # Get the json from responses
-    name = usersRes.json().get('username')
-    todosJson = todosRes.json()
-
-    # Save the employee Name -- Loop the tasks and save
-    for task in todosJson:
-        taskRow = []
-        taskRow.append(sizeofReq)
-        taskRow.append(name)
-        taskRow.append(task.get('completed'))
-        taskRow.append(task.get('title'))
-        allTasks.append(taskRow)
-
-    with open("{}.csv".format(sizeofReq), "w") as csvFile:
-        csvWriter = csv.writer(csvFile, quoting=csv.QUOTE_ALL)
-        csvWriter.writerows(allTasks)
-
-    return 0
-
-
-if __name__ == '__main__':
-    export_to_CSV(int(argv[1]))
+with open(csv_filename, 'r') as f:
+     pass
    
     
