@@ -38,7 +38,7 @@ def employee_info(employee_id):
         """Write the csv headers"""
         writer.writeheader()
 
-        """Write the rows under the epecified columns"""
+        """Write the rows in the  the epecified columns"""
         for task in todos_data:
             writer.writerow({
                 'USER_ID': employee_id,
